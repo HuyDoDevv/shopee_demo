@@ -110,3 +110,27 @@ function toggleHomeMall(direction) {
   btnBack.style.display = currentPageMall === 1 ? 'none' : 'block';
   btnNext.style.display = currentPageMall === totalPages ? 'none' : 'block';
 }
+
+let currentPageTopSearch = 1;
+function toggleTopSearch(direction) {
+  const TopSearchWrap = document.querySelector('.top__search-wrapper');
+  const TopSearchList = document.querySelector('.top__search-list');
+  const TopSearchListItem = document.querySelectorAll('.top__search-item');
+  const btnNext = document.querySelector('.top__search-btn-right');
+  const btnBack = document.querySelector('.top__search-btn-left');
+
+  const parentWidth = TopSearchWrap.clientWidth;
+
+  const totalItems = TopSearchListItem.length;
+  const itemsPerPage = Math.ceil(parentWidth / TopSearchListItem[0].clientWidth);
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  if (direction === 'next' && currentPageTopSearch < totalPages) currentPageTopSearch++;
+  if (direction === 'back' && currentPageTopSearch > 1) currentPageTopSearch--;
+
+  const newTranslateX = -(currentPageTopSearch - 1) * parentWidth;
+  TopSearchList.style.transform = `translateX(${newTranslateX}px)`;
+
+  btnBack.style.display = currentPageTopSearch === 1 ? 'none' : 'block';
+  btnNext.style.display = currentPageTopSearch === totalPages ? 'none' : 'block';
+}

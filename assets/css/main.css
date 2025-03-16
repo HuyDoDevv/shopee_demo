@@ -91,8 +91,6 @@
   border-color: transparent transparent var(--white-color) transparent;
 }
 
-.header__navbar-user-item {}
-
 .header__navbar-user-item a {
   display: block;
   text-decoration: none;
@@ -999,9 +997,9 @@
 }
 
 
+
+
 /* Banner */
-
-
 .banner {
   margin-top: 30px;
   background-color: var(--white-color);
@@ -1595,6 +1593,125 @@
 }
 
 /* end mall */
+
+
+/* top search */
+
+.top__search-wrapper {
+  width: 100%;
+  background-color: var(--white-color);
+  position: relative;
+  margin-top: 20px;
+}
+
+.top__search-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
+}
+
+.top__search-heading h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  font-weight: 400;
+}
+
+.top__search-item-tag {
+  position: absolute;
+  top: 0;
+  background-color: #f57f3c;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  align-content: center;
+  color: var(--white-color);
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.top__search-item-tag::after {
+  top: 100%;
+  content: "";
+  position: absolute;
+  border-width: 8px 16px;
+  border-style: solid;
+  border-color: #f57f3c transparent transparent transparent;
+  left: 0px;
+}
+
+.top__search-item-quntity-of-month {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .26);
+  color: var(--white-color);
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.top__search-all-link {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.top__search-container {
+  overflow: hidden;
+}
+
+.top__search-btn {
+  position: absolute;
+}
+
+.top__search-btn-left {
+  display: none;
+}
+
+.top__search-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  transition: transform linear 0.3s
+}
+
+.top__search-item {
+  list-style: none;
+  flex-shrink: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.top__search-item-link {
+  display: block;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 20px 0px;
+}
+
+.top__search-item-img {
+  position: relative;
+  padding-top: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+
+.top__search-item-price-label {
+  padding-top: 20px;
+  font-size: 1.8rem;
+  text-align: left;
+  text-transform: capitalize;
+  word-break: break-word;
+}
+
+/* end top search */
+
 
 .app__content {
   padding-top: 36px;
