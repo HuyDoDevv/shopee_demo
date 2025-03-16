@@ -86,3 +86,27 @@ function toggleHomeFlashSale(direction) {
   btnBack.style.display = currentPageFlashSale === 1 ? 'none' : 'block';
   btnNext.style.display = currentPageFlashSale === totalPages ? 'none' : 'block';
 }
+
+let currentPageMall = 1;
+function toggleHomeMall(direction) {
+  const homeMallWrap = document.querySelector('.mall__content-wrapper');
+  const homeMallList = document.querySelector('.mall__content-list');
+  const homeMallListItem = document.querySelectorAll('.mall__content-item');
+  const btnNext = document.querySelector('.mall__content-btn-right');
+  const btnBack = document.querySelector('.mall__content-btn-left');
+
+  const parentWidth = homeMallWrap.clientWidth;
+
+  const totalItems = homeMallListItem.length;
+  const itemsPerPage = Math.ceil(parentWidth / homeMallListItem[0].clientWidth) * 2;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  if (direction === 'next' && currentPageMall < totalPages) currentPageMall++;
+  if (direction === 'back' && currentPageMall > 1) currentPageMall--;
+
+  const newTranslateX = -(currentPageMall - 1) * parentWidth;
+  homeMallList.style.transform = `translateX(${newTranslateX}px)`;
+
+  btnBack.style.display = currentPageMall === 1 ? 'none' : 'block';
+  btnNext.style.display = currentPageMall === totalPages ? 'none' : 'block';
+}

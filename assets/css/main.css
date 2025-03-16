@@ -1420,6 +1420,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, .05);
 }
 
 .mall__policy {
@@ -1465,20 +1466,17 @@
   margin-right: 6px;
 }
 
-.mall__see-all {
-  display: inline-flex;
-  align-items: center;
-}
-
 .mall__see-all-link {
   font-size: 1.4rem;
   color: var(--primary-color);
   font-weight: 300;
   text-decoration: none;
   margin: 8px;
+  display: inline-flex;
+  align-items: center;
 }
 
-.mall__see-all-icon-container {
+.mall__see-all-icon {
   height: 18px;
   width: 18px;
   text-align: center;
@@ -1488,27 +1486,105 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
 }
 
-.mall__content {}
+.mall__content {
+  margin: 10px 0px;
+}
 
-.mall__img {}
+.mall__img-container {}
 
-.mall__content-container {}
+.mall__img {
+  padding-top: 121%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
 
-.mall__content-list {}
+.mall__content-container {
+  position: relative;
+}
 
-.mall__content-item {}
+.mall__content-wrapper {
+  overflow: hidden;
+  height: 475px;
+}
 
-.mall__content-item-link {}
+.mall__content-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  transition: transform linear 0.3s;
+}
 
-.mall__content-item-img {}
+.mall__content-item {
+  height: 50%;
+  list-style: none;
+}
 
-.mall__content-item-logo {}
+.mall__content-item-link {
+  text-decoration: none;
+  text-align: center;
+}
 
-.mall__content-item-endow {}
+.mall__content-item-img {
+  padding-top: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
 
+.mall__content-item-endow {
+  padding-top: 8px;
+  font-size: 2rem;
+  color: #d0011b;
+}
 
+.mall__content-btn {
+  position: absolute;
+}
+
+.mall__content-btn-left {
+  display: none;
+}
+
+.mall__content-item-all {
+  text-align: center;
+  align-content: center;
+}
+
+.mall__content-item-link-all {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  font-weight: 300;
+  display: inline-flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.mall__content-item-icon {
+  height: 18px;
+  width: 18px;
+  text-align: center;
+  background-color: #d0011b;
+  border-radius: 50%;
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
 
 /* end mall */
 
