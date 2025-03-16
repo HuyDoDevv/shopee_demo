@@ -39,7 +39,7 @@ function showSlides(n) {
 showSlides(slideIndex);
 startSlideshow();
 
-let currentPage = 1;
+let currentPageCategory = 1;
 function toggleHomeCategory(direction) {
   const homeCategoryWrap = document.querySelector('.home-category__content-wrap');
   const homeCategoryList = document.querySelector('.home-category__content-list');
@@ -53,12 +53,36 @@ function toggleHomeCategory(direction) {
   const itemsPerPage = Math.floor(parentWidth / homeCategoryListItem[0].clientWidth) * 2;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
 
-  if (direction === 'next' && currentPage < totalPages) currentPage++;
-  if (direction === 'back' && currentPage > 1) currentPage--;
+  if (direction === 'next' && currentPageCategory < totalPages) currentPageCategory++;
+  if (direction === 'back' && currentPageCategory > 1) currentPageCategory--;
 
-  const newTranslateX = -(currentPage - 1) * parentWidth;
+  const newTranslateX = -(currentPageCategory - 1) * parentWidth;
   homeCategoryList.style.transform = `translateX(${newTranslateX}px)`;
 
-  btnBack.style.display = currentPage === 1 ? 'none' : 'block';
-  btnNext.style.display = currentPage === totalPages ? 'none' : 'block';
+  btnBack.style.display = currentPageCategory === 1 ? 'none' : 'block';
+  btnNext.style.display = currentPageCategory === totalPages ? 'none' : 'block';
+}
+
+let currentPageFlashSale = 1;
+function toggleHomeFlashSale(direction) {
+  const homeFlashSaleWrap = document.querySelector('.flash__sale-list-wrapper');
+  const homeFlashSaleList = document.querySelector('.flash__sale-list');
+  const homeFlashSaleListItem = document.querySelectorAll('.flash__sale-item');
+  const btnNext = document.querySelector('.flash__sale-btn-right');
+  const btnBack = document.querySelector('.flash__sale-btn-left');
+
+  const parentWidth = homeFlashSaleWrap.clientWidth;
+
+  const totalItems = homeFlashSaleListItem.length;
+  const itemsPerPage = Math.ceil(parentWidth / homeFlashSaleListItem[0].clientWidth);
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+
+  if (direction === 'next' && currentPageFlashSale < totalPages) currentPageFlashSale++;
+  if (direction === 'back' && currentPageFlashSale > 1) currentPageFlashSale--;
+
+  const newTranslateX = -(currentPageFlashSale - 1) * parentWidth;
+  homeFlashSaleList.style.transform = `translateX(${newTranslateX}px)`;
+
+  btnBack.style.display = currentPageFlashSale === 1 ? 'none' : 'block';
+  btnNext.style.display = currentPageFlashSale === totalPages ? 'none' : 'block';
 }
