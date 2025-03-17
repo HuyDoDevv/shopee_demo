@@ -329,3 +329,45 @@ html {
 .home-product__pagination {
   margin: 48px 0 32px 0;
 }
+
+/* Tag */
+
+.tag-label {
+  font-size: 1rem;
+  display: inline-block;
+  padding: 0px 2px;
+  margin: 2px 0px;
+  border: 1px solid rgb(238, 77, 45);
+  border-radius: 3px;
+  color: rgb(238, 77, 45);
+}
+
+.tag-voucher {
+  display: inline-block;
+  text-align: center;
+  background-color: #f69111;
+  color: var(--white-color);
+  position: relative;
+  padding: 0px 10px;
+  margin: 0 4px;
+}
+
+.tag-voucher::before,
+.tag-voucher::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 40%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.tag-voucher::before {
+  left: -5px;
+}
+
+.tag-voucher::after {
+  right: -5px;
+}
